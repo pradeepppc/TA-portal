@@ -1,0 +1,87 @@
+					##############################
+					     DATABASE   SCHEMA
+					##############################
+
+
+#######################
+faculty table :
+		-> all these fields are taken while registering of faculty for the first time itself.
+			
+#######################
+__tablename__ => Faculty
+id => primarykey
+name => string
+email => string (unique=True)
+course_id => string (unique = True)
+course_name => string (unique = True)
+course_description => string
+passwd => string
+#######################################
+student table:
+		-> all these fields are taken while registering of the student for the first time itself.
+#######################################
+
+__tablename__ => Student
+id => primary_key
+name => string
+email => string
+passwd => string
+cgpa  => float
+rollno => integer
+###########################################
+preference table:
+		-> preference table consists of each student rollno along with that particular student preferences in order
+##########################################
+
+__tablename__ =>  Preferences
+ 
+id => primary_key
+rollno => (Integer type)foriegn_key(Student.id)
+preference1 => (string)foriegn_key(Faculty.id)
+preference2 => (string)foriegn_key(Faculty.id)
+preference3 => (string)foriegn_key(Faculty.id)
+
+##########################################
+Application Table:
+        ->This table is updated when student fills his preferences and used to display the applications for the faculty to select
+#########################################
+
+__tablename__=> Application
+
+id => primary_key
+rollno => (Integer)foriegn_key(Student.id)
+course_id=>(string)foriegn_key(Faculty.id)
+
+########################################
+Nomination Table:
+        ->This table consists of the students and their course whose application is accepted by the faculty
+########################################
+
+__tablename__ => Nominee
+
+id => primary_key
+rollno => (Integer)foriegn_key(Student.id)
+course_id => (string)foriegn_key(Faculty.id)
+
+#########################################
+TAchairselectedTable:
+        ->This Table consists of the nominations which are selected by the TAChair
+########################################## 
+
+__tablename__=>TAChairsel
+
+id => primary_key
+rollno => (Integer)foriegn_key(Student.id)
+course_id => (string)foriegn_key(Faculty.id)
+
+##########################################
+FinalTATable:
+        -> This table consists of Final TA's and their courses and get created when student accepts the TAship
+##########################################
+
+__tablename__ => FinalTA
+
+id => primary_key
+rollno => (Integer)foriegn_key(Student.id)
+course_id => (string)foriegn_key(Faculty.id)
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home page </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    input[type="text"] {
+        border : 0 ;
+            }
+table{
+        width:100%;
+        background-color:white;
+        color:blue;
+        }
+        table,th,td{
+        border:1px solid black;        
+        }
+        th,td{
+        text-align:center;
+        }
+        tr{
+        background-color:"#2F4F4F";
+        }
+  </style>
+</head>
+<body style="background-color:powderblue">
+    <h1 style="text-align:center"> This is your Homepage </h1>
+    <h3>These are the applications to your course </h3>
+    <table>
+        <thead>
+            <th>Student Name </th>
+            <th>Student CGPA </th>
+            <th>Roll No </th>
+            <th>submit</th>
+        </thead>
+        <tbody>
+            {% for application in applications %}
+            <tr>
+                <td>{{ application.name }} </td>
+                <td>{{ application.cgpa }} </td>
+                <form method= "POST" action="/faculty/add">
+                    <td><input type="text" name="roll" value="{{ application.rollno }}" id="disabled" readonly></td>
+                    <td><input type="submit" value="Submit" class="btn btn-default"></td>
+                </form>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3> These are your nominations to your course </h3>
+    <table>
+        <thead>
+            <th>Student Name </th>
+            <th>Student CGPA </th>
+            <th>Roll No </th>
+        </thead>
+        <tbody>
+            {% for nomination in nominations %}
+            <tr>
+                <td>{{ nomination.name }} </td>
+                <td>{{ nomination.cgpa }} </td>
+                <td>{{ nomination.rollno }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form method="POST" action="/faculty/logout">
+        <input type="submit" value="logout" class="btn btn-default">
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>faculty login </title>
+	<style>
+	.para{
+		text-align : center;
+		color : blue;
+		}
+	</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<h1 class="para">Faculty Login page</h1>
+</div>
+<div class="container">
+  <form id="faculty_login" method="POST" action="/faculty">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="passwd">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <input type="submit" class="btn btn-default" id="faculty_login_button" value="Login">
+  </form>
+</div>
+
+<div>
+<h2 style="text-align:center">{{ message }}</h2>
+</div>
+
+<div class="container">
+<h1 style="text-align:centre">Register Page</h1>
+<form method="GET" action="/faculty/registerpage">
+<button type="submit" class="btn btn-default" id="faculty_registerpage">Register page</button>
+</form>
+</div>
+</body>
+</html>
+

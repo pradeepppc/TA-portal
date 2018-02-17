@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+  <title>TA login </title>
+	<style>
+	.para{
+		text-align : center;
+		color : blue;
+		}
+	</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" >
+<h1 class="para">Student Login Form</h1>
+</div>
+<div class="container">
+  <form id="form1" class="form1" name="frm1" method="POST" action="/student">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="student_login_email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="student_login_pwd" placeholder="Enter password" name="password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <input type="submit" name="Submit">
+  </form>
+</div>
+<div>
+<h2 style="text-align:centre">{{message}}</h2>
+</div>
+<br/>
+<br/>
+<br/>
+
+<div class="container">
+<h1 style="text-align:center">Click this button to register</h1>
+<form id="form2" class="form2" method="GET" action="/student/registerpage" name="frm2"> 
+<button type="submit" class="btn btn-default" id="student_register_page">Register page</button>
+</form>
+</div>
+
+<!-- mancjnd -->
+<!-- <script src="./../static/js/student_login.js"></script> -->
+<!-- bfhebkf -->
+
+</body>
+</html>
+

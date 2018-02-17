@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Faculty register</title>
+	<style>
+	.para{
+	text-align  : center;
+	color : blue;
+	}
+	</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  
+</head>
+<body>
+<div class="conatainer">
+<h1 class="para">Faculty Register Form</h1>
+</div>
+<div class="container">
+  <form id="faculty_register" method="post" action="/faculty/register" >
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" class="form-control" id="faculty_register_email" name="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+	<label for="name">Name:</label>
+	<input type="text" class="form-control"  id="faculty_register_name" name="name" placeholder="Enter name">
+	</div>
+    <div class="form-group">
+	<label for="course_id">Courseid:</label>
+	<input type="text" class="form-control" id="faculty_register_course_id" name="course_id" placeholder="Enter Course_id">	
+	</div>
+    <div class="form-group">
+	<label for="course_name">Name of the course:</label>
+	<input type="text" class="form-control" id="faculty_register_course_name" name="course_name" placeholder="Enter course name">
+	</div>
+	<div class="form_group"> 
+	<label for="course_description">Course - description:</label>
+	<textarea rows="10" cols="80" class="form-control" id="faculty_register_course_description" name="course_description" placeholder="Please write somthing about this course and requirements for ta required to this course">
+	</textarea>
+	</div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="faculty_register_password" name="passwd" placeholder="Enter password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <input type="submit" id="faculty_register_button" class="btn btn-default" value="Submit">
+  </form>
+</div>
+
+<div>
+<p1 id="faculty_register_error" style="text-align:center" >{{ message }}</p1>
+</div>
+<!-- <script src="/home/user/TA-Portal-1/app/static/js/vendor/jquery.min.js"></script>
+<script src="/home/user/TA-Portal-1/app/static/js/vendor/bootstrap.min.js"></script>
+<script src="/home/user/TA-Portal-1/app/static/js/vendor/page.js"></script>
+<script src="/home/user/TA-Portal-1/app/static/js/vendor/handlebars.min.js"></script> -->
+<!-- <script src="./../static/js/faculty_register.js"></script> -->
+<!--<script>
+$("#student_register_button").click(
+	function(){
+	var email = $("#student_register_email").val();
+	var name = $("#student_register_name").val();
+	var password = $("#student_register_password").val();
+	var cgpa = $("#student_register_cgpa").val();
+	var rollno =$("#student_register_rollno").val();		
+	
+	if(length(password) <= 7)
+	alert("password should be atleast 8 charecters long");
+	
+	if(Number(cgpa)<0 && Number(cgpa) >10)
+	alert("Enter a valid cgpa");
+	
+	if(rollno >= 20110000 && rollno <= 20169999)
+	rollno = rollno;
+	else
+	alert("Enter valid roll number");
+	
+
+	callstudent_register_function(email,name,rollno,password,cgpa);
+	
+			}
+	
+	
+	
+	);
+
+
+var callstudent_register_function=function(email,name,rollno,password,cgpa)
+			{
+			 $.ajax({
+                url : 'http://127.0.0.1:5000/student/register',
+                method:"post",
+                data:{
+                        rollno:rollno,
+                        name:name,
+                        email:email,
+			password:password,
+			cgpa:cgpa,
+                        },
+                success:function(){
+                alert("student added");
+
+                },
+                error: function(xhr,status,error){
+                alert("request failed");},
+                }
+        );
+	}
+
+
+
+</script> -->
+
+</body>
+</html>
+

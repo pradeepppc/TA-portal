@@ -1,0 +1,72 @@
+<!DOCTYPEHTML>
+<html>
+<head>
+<title>TA-SHIP</title>
+
+<style>
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.ty{
+	text-align : center;
+	color : grey;	
+
+}
+.param{
+
+	text-align : center;
+	color : blue;
+}
+.gif-container {
+  background: url("https://media.giphy.com/media/ESxVxc9HttIDm/giphy.gif") center;
+  background-size: cover;
+  filter :  brightness(70%);
+  height: 100%;
+}
+.val{
+
+	text-align : center;
+	color : grey;
+}
+</style>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+
+<div class="gif-container">
+<div class="container">
+<h1 class="param">TA-PORTAL</h1>
+</div>
+
+<div class="container">
+<h3 class="ty">Student Login</h3>
+<form method="GET" action="/student" class="val">
+<input type="submit" value="Student_login">
+</form>
+</div>
+
+<div class="container">
+<h3 class="ty">Faculty Login</h3>
+<form method="GET" action="/faculty" class="val">
+<input type="submit" value="Faculty_login">
+</form>
+</div>
+
+<div class="container">
+<h3 class="ty">Tachair Login</h3>
+<form method="GET" action="/tachair" class="val"> 
+<input type="submit" value="tachair_login">
+</form>
+</div>
+<br/>
+</div>
+<body>
+</html>
